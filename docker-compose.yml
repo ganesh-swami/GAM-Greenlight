@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:14-alpine3.20
+    container_name: postgres
+    restart: unless-stopped
+    volumes:
+      - ./data/postgres/14/database_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=a3ffb3e40dfef9eaff141988e0a7acc9d9d3b9108305a8f8
+
+  redis:
+    image: redis:6.2-alpine3.20
+    container_name: redis
+    restart: unless-stopped
+    volumes:
+      - ./data/redis/database_data:/data
+
+  greenlight-v3:
+    entrypoint: [bin/start]
+    image: bigbluebutton/greenlight:v3
+    container_name: greenlight-v3
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 127.0.0.1:5050:3000
+    logging:
+      driver: journald
+    volumes:
+      - ./data/greenlight-v3/storage:/usr/src/app/storage
+      - ./Room.jsx:/usr/src/app/app/javascript/components/rooms/room/Room.jsx
+      - ./JoinCard.jsx:/usr/src/app/app/javascript/components/rooms/room/join/JoinCard.jsx
+      - ./Footer.jsx:/usr/src/app/app/javascript/components/shared_components/Footer.jsx
+      - ./application.html.erb:/usr/src/app/app/views/layouts/application.html.erb
+      - ./App.jsx:/usr/app/app/javascript/App.jsx
+      - ./application_helper.rb:/usr/src/app/app/helpers/application_helper.rb
+      - ./Title.jsx:/usr/src/app/app/javascript/components/shared_components/utilities/Title.jsx
+      - ./JoinCard.jsx:/usr/src/app/app/javascript/components/rooms/room/join/JoinCard.jsx
+      - ./useRoomJoinForm.js:/usr/src/app/app/javascript/hooks/forms/rooms/useRoomJoinForm.js
+      - ./en.json:/usr/src/app/app/assets/locales/en.json
+      - ./de.json:/usr/src/app/app/assets/locales/de.json
+      - ./HomePage.jsx:/usr/src/app/app/javascript/components/home/HomePage.jsx
+    depends_on:
+      - postgres
+      - redis
