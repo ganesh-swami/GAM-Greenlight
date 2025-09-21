@@ -19,16 +19,16 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
 export default function Title({ children: title }) {
-  let displayTitle = title || "Gam Medical";
-  
-  // Replace any occurrence of 'BigBlueButton' with 'Gam Medical'
-  if (typeof displayTitle === 'string') {
-    displayTitle = displayTitle.replace(/BigBlueButton/gi, 'Gam Medical');
+  let displayTitle = title || "GAM Medical";
+
+  // Replace any occurrence of 'BigBlueButton' with 'GAM Medical'
+  if (typeof displayTitle === "string") {
+    displayTitle = displayTitle.replace(/BigBlueButton/gi, "GAM Medical");
   } else {
     // If title is not a string, use the default
-    displayTitle = "Gam Medical";
+    displayTitle = "GAM Medical";
   }
-  
+
   return (
     <Helmet>
       <title>{displayTitle}</title>
@@ -40,4 +40,3 @@ export default function Title({ children: title }) {
 Title.propTypes = {
   children: PropTypes.node.isRequired,
 };
-

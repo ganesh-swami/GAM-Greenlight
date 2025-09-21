@@ -34,7 +34,7 @@ export default function Footer() {
     <footer id="footer" className="footer background-whitesmoke text-center">
       <Container id="footer-container" className="py-3">
         <a href="https://www.gam-medical.de" target="_blank" rel="noreferrer">
-          Gam Medical
+          GAM Medical
         </a>
         {isAdmin && <span className="text-muted"> {env?.VERSION_TAG} </span>}
         {links?.Terms && (
@@ -61,4 +61,3 @@ export default function Footer() {
     </footer>
   );
 }
-

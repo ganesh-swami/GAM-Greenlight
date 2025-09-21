@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   postgres:
@@ -41,6 +41,7 @@ services:
       - ./useRoomJoinForm.js:/usr/src/app/app/javascript/hooks/forms/rooms/useRoomJoinForm.js
       - ./en.json:/usr/src/app/app/assets/locales/en.json
       - ./de.json:/usr/src/app/app/assets/locales/de.json
+      - ./it.json:/usr/src/app/app/assets/locales/it.json
       - ./HomePage.jsx:/usr/src/app/app/javascript/components/home/HomePage.jsx
     depends_on:
       - postgres
