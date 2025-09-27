@@ -42,6 +42,9 @@ services:
       - ./en.json:/usr/src/app/app/assets/locales/en.json
       - ./de.json:/usr/src/app/app/assets/locales/de.json
       - ./it.json:/usr/src/app/app/assets/locales/it.json
+      - ./en.yml:/usr/src/app/config/locales/en.yml
+      - ./de.yml:/usr/src/app/config/locales/de.yml
+      - ./it.yml:/usr/src/app/config/locales/it.yml
       - ./HomePage.jsx:/usr/src/app/app/javascript/components/home/HomePage.jsx
     depends_on:
       - postgres
