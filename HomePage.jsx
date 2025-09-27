@@ -126,7 +126,7 @@ export default function HomePage() {
               {t("homepage.greenlight_description")}
             </p>
             <a
-              href="https://gam-medical.de/"
+              href="https://gam-medical.com/"
               className="fs-5 text-link fw-bolder"
             >
               {t("homepage.learn_more")}

@@ -33,7 +33,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="footer background-whitesmoke text-center">
       <Container id="footer-container" className="py-3">
-        <a href="https://www.gam-medical.de" target="_blank" rel="noreferrer">
+        <a href="https://gam-medical.com/" target="_blank" rel="noreferrer">
           GAM Medical
         </a>
         {links?.Terms && (
