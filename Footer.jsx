@@ -36,7 +36,6 @@ export default function Footer() {
         <a href="https://www.gam-medical.de" target="_blank" rel="noreferrer">
           GAM Medical
         </a>
-        {isAdmin && <span className="text-muted"> {env?.VERSION_TAG} </span>}
         {links?.Terms && (
           <a
             className="ps-3"
